@@ -1,0 +1,95 @@
+import MeetingsApp from "./images/meeting-app.png";
+import ECommerceApp from "./images/e-commerce.png";
+
+export const tileData = [
+	{
+		id: 1,
+		image: MeetingsApp,
+		title: "Meetings App",
+		technologies: ["ReactJS", "Node.js", "MongoDB", "Bootstrap"],
+		span: "normal",
+		path: "https://athletes-foot.herokuapp.com/",
+	},
+	{
+		id: 2,
+		image: ECommerceApp,
+		title: "E-Commerce App",
+		technologies: ["ReactJS", "Redux", "Firebase", "Styled-Components"],
+		span: "tall",
+		path: "https://merlyn-clothing.herokuapp.com/",
+	},
+	{
+		id: 3,
+		image: MeetingsApp,
+		title: "Meetings App",
+		technologies: ["ReactJS", "Node.js", "MongoDB", "Bootstrap"],
+		span: "normal",
+		path: "https://athletes-foot.herokuapp.com/",
+	},
+	{
+		id: 4,
+		image: ECommerceApp,
+		title: "E-Commerce App",
+		technologies: ["ReactJS", "Redux", "Firebase", "Styled-Components"],
+		span: "big",
+		path: "https://merlyn-clothing.herokuapp.com/",
+	},
+	{
+		id: 5,
+		image: MeetingsApp,
+		title: "Meetings App",
+		technologies: ["ReactJS", "Node.js", "MongoDB", "Bootstrap"],
+		span: "normal",
+		path: "https://athletes-foot.herokuapp.com/",
+	},
+	{
+		id: 6,
+		image: ECommerceApp,
+		title: "E-Commerce App",
+		technologies: ["ReactJS", "Redux", "Firebase", "Styled-Components"],
+		span: "tall",
+		path: "https://merlyn-clothing.herokuapp.com/",
+	},
+	{
+		id: 7,
+		image: MeetingsApp,
+		title: "Meetings App",
+		technologies: ["ReactJS", "Node.js", "MongoDB", "Bootstrap"],
+		span: "big",
+		path: "https://athletes-foot.herokuapp.com/",
+	},
+	{
+		id: 8,
+		image: ECommerceApp,
+		title: "E-Commerce App",
+		technologies: ["ReactJS", "Redux", "Firebase", "Styled-Components"],
+		span: "normal",
+		path: "https://merlyn-clothing.herokuapp.com/",
+	},
+	{
+		id: 9,
+		image: MeetingsApp,
+		title: "Meetings App",
+		technologies: ["ReactJS", "Node.js", "MongoDB", "Bootstrap"],
+		span: "tall",
+		path: "https://athletes-foot.herokuapp.com/",
+	},
+	{
+		id: 10,
+		image: ECommerceApp,
+		title: "E-Commerce App",
+		technologies: ["ReactJS", "Redux", "Firebase", "Styled-Components"],
+		span: "normal",
+		path: "https://merlyn-clothing.herokuapp.com/",
+	},
+	{
+		id: 11,
+		image: ECommerceApp,
+		title: "E-Commerce App",
+		technologies: ["ReactJS", "Redux", "Firebase", "Styled-Components"],
+		span: "normal",
+		path: "https://merlyn-clothing.herokuapp.com/",
+	},
+];
+
+export const images = [MeetingsApp, ECommerceApp];

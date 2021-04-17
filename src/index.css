@@ -1,0 +1,33 @@
+body {
+	min-height: 100vh;
+	max-width: 100vw !important;
+	margin: 0;
+	padding: 0;
+	background: #12232e;
+	font-family: "Roboto", sans-serif;
+	text-align: center;
+	color: #eefbfb;
+	box-sizing: border-box;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+		monospace;
+}
+
+h1,
+h2,
+h3 {
+	font-family: "Montserrat", sans-serif;
+}
+
+a,
+a:hover {
+	text-decoration: none;
+}
+
+#root {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
