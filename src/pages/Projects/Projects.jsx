@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-import Slider from "../../components/Slider/Slider";
+import GridLayout from "../../components/GridLayout/GridLayout";
 
 import { pageVariants } from "../../utils/framer-motion/pageVariants";
 
@@ -13,7 +13,7 @@ const Projects = () => {
 			exit="exit"
 			variants={pageVariants}
 		>
-			<Slider />
+			<GridLayout />
 		</motion.div>
 	);
 };
