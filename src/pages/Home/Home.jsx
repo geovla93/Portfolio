@@ -34,7 +34,6 @@ const useStyles = makeStyles({
 });
 
 const heading1 = "Hello!";
-const Heading2 = "I am George Vlassis";
 
 const Home = () => {
 	const classes = useStyles();
@@ -56,9 +55,7 @@ const Home = () => {
 				</Grid>
 				<Grid item xs={12}>
 					<Typography className={classes.text} component="h2" variant="h3">
-						{[...Heading2].map((letter, index) => {
-							return <Heading key={index}>{letter}</Heading>;
-						})}
+						I am George Vlassis
 					</Typography>
 				</Grid>
 				<Grid item xs={12}>
