@@ -48,7 +48,7 @@ const Footer = () => {
 			</div>
 			<div>
 				<Typography variant="body1">
-					Designed by George Vlassis @ {date}
+					Copyright © {date} Designed by <strong>George Vlassis</strong>
 				</Typography>
 			</div>
 		</FooterContainer>
