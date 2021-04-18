@@ -7,10 +7,17 @@ import { Form } from "./ContactFormStyles";
 
 const useStyles = makeStyles({
 	focus: {
+		"& label": {
+			color: "#fff",
+		},
 		"& label.Mui-focused": {
 			color: "#4da8da",
 		},
 		"& .MuiOutlinedInput-root": {
+			color: "#fff",
+			"& fieldset": {
+				borderColor: "#fff",
+			},
 			"&.Mui-focused fieldset": {
 				borderColor: "#4da8da",
 			},
@@ -26,10 +33,11 @@ const useStyles = makeStyles({
 	},
 	button: {
 		width: "20%",
-		color: "#4da8da",
+		color: "#fff",
+		borderColor: "#fff",
 		"&:hover": {
 			borderColor: "#4da8da",
-			color: "#fff",
+			color: "#4da8da",
 		},
 	},
 });

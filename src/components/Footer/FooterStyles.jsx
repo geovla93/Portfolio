@@ -33,7 +33,7 @@ export const SocialIcon = styled.a.attrs((props) => ({
 	background: props.color,
 }))`
 	color: #eefbfb;
-
+	margin: 0 0.5rem;
 	&:hover {
 		color: ${(props) => props.background};
 	}
