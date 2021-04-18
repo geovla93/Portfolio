@@ -3,6 +3,7 @@ import { Grid, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 
 import Card from "../../components/Card/Card";
+import Heading from "../../components/Heading/Heading";
 
 import { AboutContainer } from "./AboutStyles";
 
@@ -18,6 +19,7 @@ const useStyles = makeStyles({
 		},
 	},
 	text: {
+		cursor: "default",
 		"&.MuiTypography-root": {
 			textAlign: "center",
 			"@media (min-width: 960px)": {
@@ -29,6 +31,8 @@ const useStyles = makeStyles({
 		padding: "1rem 0",
 	},
 });
+
+const title = "About";
 
 const About = () => {
 	const classes = useStyles();
@@ -42,7 +46,9 @@ const About = () => {
 			<Grid className={classes.root} container spacing={5}>
 				<Grid className={classes.padding} item xs={12}>
 					<Typography className={classes.text} component="h1" variant="h2">
-						About
+						{[...title].map((letter, index) => {
+							return <Heading key={index}>{letter}</Heading>;
+						})}
 					</Typography>
 				</Grid>
 				<Grid item container xs={12} md={6}>

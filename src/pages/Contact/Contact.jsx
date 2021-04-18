@@ -3,6 +3,7 @@ import { Grid, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 
 import ContactForm from "../../components/ContactForm/ContactForm";
+import Heading from "../../components/Heading/Heading";
 
 import { ContactContainer } from "./ContactStyles";
 
@@ -18,6 +19,7 @@ const useStyles = makeStyles({
 		},
 	},
 	text: {
+		cursor: "default",
 		"&.MuiTypography-root": {
 			textAlign: "center",
 			"@media (min-width: 960px)": {
@@ -26,6 +28,8 @@ const useStyles = makeStyles({
 		},
 	},
 });
+
+const title = "Get In Touch!";
 
 const Contact = () => {
 	const classes = useStyles();
@@ -40,7 +44,9 @@ const Contact = () => {
 				<Grid item container xs={12} md={6}>
 					<Grid item xs={12}>
 						<Typography className={classes.text} component="h1" variant="h2">
-							Get In Touch
+							{[...title].map((letter, index) => {
+								return <Heading key={index}>{letter}</Heading>;
+							})}
 						</Typography>
 					</Grid>
 					<Grid item xs={12}>

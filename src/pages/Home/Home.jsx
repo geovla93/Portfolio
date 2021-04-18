@@ -5,6 +5,8 @@ import { Grid, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 
 import CustomButton from "../../components/CustomButton/CustomButton";
+import Heading from "../../components/Heading/Heading";
+
 import { HomeContainer } from "./HomeStyles";
 
 import { pageVariants } from "../../utils/framer-motion/pageVariants";
@@ -26,10 +28,17 @@ const useStyles = makeStyles({
 			},
 		},
 	},
+	text: {
+		cursor: "default",
+	},
 });
+
+const heading1 = "Hello!";
+const Heading2 = "I am George Vlassis";
 
 const Home = () => {
 	const classes = useStyles();
+
 	return (
 		<HomeContainer
 			initial="hidden"
@@ -39,13 +48,17 @@ const Home = () => {
 		>
 			<Grid className={classes.root} container spacing={5}>
 				<Grid item xs={12}>
-					<Typography component="h1" variant="h2">
-						Hello!
-					</Typography>{" "}
+					<Typography className={classes.text} component="h1" variant="h2">
+						{[...heading1].map((letter, index) => {
+							return <Heading key={index}>{letter}</Heading>;
+						})}
+					</Typography>
 				</Grid>
 				<Grid item xs={12}>
-					<Typography component="h2" variant="h3">
-						I am <strong>George Vlassis</strong>
+					<Typography className={classes.text} component="h2" variant="h3">
+						{[...Heading2].map((letter, index) => {
+							return <Heading key={index}>{letter}</Heading>;
+						})}
 					</Typography>
 				</Grid>
 				<Grid item xs={12}>
