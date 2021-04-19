@@ -19,8 +19,6 @@ const Heading = ({ children }) => {
 
 	const classes = useStyles();
 
-	console.log(children);
-
 	return (
 		<motion.span
 			className={classes.hover}

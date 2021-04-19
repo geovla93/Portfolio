@@ -1,11 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import * as emailjs from "emailjs-com";
-import { FormControl, TextField, Button } from "@material-ui/core";
+import {
+	FormControl,
+	TextField,
+	Button,
+	CircularProgress,
+	Dialog,
+	DialogTitle,
+	DialogContent,
+	Typography,
+} from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 
 import { Form } from "./ContactFormStyles";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
 	focus: {
 		"& label": {
 			color: "#fff",
@@ -35,12 +44,18 @@ const useStyles = makeStyles({
 		width: "20%",
 		color: "#fff",
 		borderColor: "#fff",
+		position: "relative",
 		"&:hover": {
 			borderColor: "#4da8da",
 			color: "#4da8da",
 		},
 	},
-});
+	loader: {
+		position: "absolute",
+		right: 12,
+		color: "#4da8da",
+	},
+}));
 
 const ContactForm = () => {
 	const [textInput, setTextInput] = useState({
@@ -49,6 +64,16 @@ const ContactForm = () => {
 		subject: "",
 		message: "",
 	});
+	const [loading, setLoading] = useState(false);
+	const [open, setOpen] = useState(false);
+
+	const timer = useRef();
+
+	useEffect(() => {
+		return () => {
+			clearTimeout(timer.current);
+		};
+	}, []);
 
 	const classes = useStyles();
 
@@ -104,6 +129,14 @@ const ContactForm = () => {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 
+		if (!loading) {
+			setLoading(true);
+			timer.current = window.setTimeout(() => {
+				setLoading(false);
+				setOpen(true);
+			}, 2000);
+		}
+
 		const { name, email, subject, message } = textInput;
 
 		const templateParams = {
@@ -127,6 +160,10 @@ const ContactForm = () => {
 				console.log(error.text);
 			}
 		);
+	};
+
+	const handleClose = () => {
+		setOpen(false);
 	};
 
 	return (
@@ -170,7 +207,26 @@ const ContactForm = () => {
 				size="large"
 			>
 				Send
+				{loading && <CircularProgress size={24} className={classes.loader} />}
 			</Button>
+			<Dialog
+				open={open}
+				onClose={handleClose}
+				aria-labelledby="dialog-title"
+				aria-describedby="dialog-description"
+			>
+				<DialogTitle id="dialog-title">
+					<Typography variant="h6" gutterBottom>
+						Thanks for submitting!
+					</Typography>
+				</DialogTitle>
+				<DialogContent id="dialog-description">
+					<Typography variant="body1">
+						Your message has been received! I will reply to you as soon as
+						possible.
+					</Typography>
+				</DialogContent>
+			</Dialog>
 		</Form>
 	);
 };
