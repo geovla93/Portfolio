@@ -1,5 +1,0 @@
-background: #12232e
-background_secondary: #203647
-primary: #4da8da
-secondary: #007cc7
-text: #eefbfb
