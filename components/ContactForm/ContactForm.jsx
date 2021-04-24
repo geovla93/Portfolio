@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 	button: {
-		width: "20%",
+		width: "35%",
 		color: "#fff",
 		borderColor: "#fff",
 		position: "relative",
@@ -147,9 +147,9 @@ const ContactForm = () => {
 			message: message,
 		};
 
-		const serviceId = process.env.REACT_APP_SERVICE_ID;
-		const templateId = process.env.REACT_APP_TEMPLATE_ID;
-		const userId = process.env.REACT_APP_USER_ID;
+		const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID;
+		const templateId = process.env.NEXT_PUBLIC_TEMPLATE_ID;
+		const userId = process.env.NEXT_PUBLIC_USER_ID;
 
 		emailjs.send(serviceId, templateId, templateParams, userId).then(
 			(result) => {
@@ -216,9 +216,11 @@ const ContactForm = () => {
 				aria-describedby="dialog-description"
 			>
 				<DialogTitle id="dialog-title">
-					<Typography variant="h6" gutterBottom>
-						Thanks for submitting!
-					</Typography>
+					<div>
+						<Typography variant="h6" gutterBottom>
+							Thanks for submitting!
+						</Typography>
+					</div>
 				</DialogTitle>
 				<DialogContent id="dialog-description">
 					<Typography variant="body1">

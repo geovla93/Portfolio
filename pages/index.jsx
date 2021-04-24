@@ -19,7 +19,6 @@ import { motion } from "framer-motion";
 
 const useStyles = makeStyles({
 	root: {
-		flexGrow: 1,
 		"&.MuiGrid-root": {
 			"@media (max-width: 960px)": {
 				marginTop: "5rem",
@@ -59,7 +58,7 @@ export default function Home() {
 
 			<Hamburger />
 			<HomeContainer>
-				<Grid className={classes.root} container spacing={5}>
+				<Grid className={classes.root} container spacing={8}>
 					<Grid item xs={12}>
 						<Typography className={classes.text} component="h1" variant="h2">
 							{[...heading1].map((letter, index) => {

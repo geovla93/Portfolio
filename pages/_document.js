@@ -1,19 +1,14 @@
 import React from "react";
-import Document, { Head, Main, NextScript } from "next/document";
+import Document, { Html, Head, Main, NextScript } from "next/document";
 import { ServerStyleSheets } from "@material-ui/styles";
 import { ServerStyleSheet } from "styled-components";
 
 class MyDocument extends Document {
 	render() {
 		return (
-			<html lang="en">
+			<Html lang="en">
 				<Head>
-					<title>George Vlassis | Full-Stack Web Developer</title>
 					<meta charSet="utf-8" />
-					<meta
-						name="viewport"
-						content="width=device-width, initial-scale=1, shrink-to-fit=no"
-					/>
 					<meta
 						name="description"
 						content="George Vlassis Full-Stack Web Developer | Based in Ioannina, Greece."
@@ -35,7 +30,7 @@ class MyDocument extends Document {
 					<Main />
 					<NextScript />
 				</body>
-			</html>
+			</Html>
 		);
 	}
 }

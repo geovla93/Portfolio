@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+import Head from "next/head";
 import React, { useState, useEffect } from "react";
 import { StylesProvider } from "@material-ui/core/styles";
 import { AnimatePresence } from "framer-motion";
@@ -20,15 +21,24 @@ function MyApp({ Component, pageProps, router }) {
 	}, []);
 
 	return (
-		<StylesProvider injectFirst>
-			<AnimatePresence exitBeforeEnter>
-				{loading ? (
-					<Loading load={loading} />
-				) : (
-					<Component {...pageProps} key={router.route} />
-				)}
-			</AnimatePresence>
-		</StylesProvider>
+		<>
+			<Head>
+				<title>George Vlassis | Full-Stack Web Developer</title>
+				<meta
+					name="viewport"
+					content="width=device-width, initial-scale=1, shrink-to-fit=no"
+				/>
+			</Head>
+			<StylesProvider injectFirst>
+				<AnimatePresence exitBeforeEnter>
+					{loading ? (
+						<Loading load={loading} />
+					) : (
+						<Component {...pageProps} key={router.route} />
+					)}
+				</AnimatePresence>
+			</StylesProvider>
+		</>
 	);
 }
 
