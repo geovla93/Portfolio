@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { GridList, GridListTile } from "@material-ui/core";
 import withWidth, { isWidthUp } from "@material-ui/core/withWidth";
 
@@ -28,7 +29,13 @@ const GridLayout = (props) => {
 							key={tile.id}
 							cols={getGridListCols() === 3 ? tile.cols : 1}
 						>
-							<img src={tile.image} alt={tile.title} />
+							<Image
+								src={tile.image}
+								alt={tile.title}
+								layout="fill"
+								objectFit="cover"
+								objectPosition="left top"
+							/>
 							<Tile tile={tile} />
 						</GridListTile>
 					);

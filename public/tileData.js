@@ -34,26 +34,11 @@ export const tileData = [
 		image: "/images/meeting-app.png",
 		title: "Meetings App",
 		technologies: ["ReactJS", "Node.js", "MongoDB", "Bootstrap"],
-		cols: 2,
+		cols: 1,
 		path: "https://athletes-foot.herokuapp.com/",
 	},
 	{
 		id: 4,
-		image: "/images/e-commerce.png",
-		title: "E-Commerce App",
-		technologies: [
-			"Next.js",
-			"Redux",
-			"MongoDB",
-			"Next-Auth",
-			"Material-UI",
-			"Styled-Components",
-		],
-		cols: 1,
-		path: "https://merlyn-app.vercel.app/",
-	},
-	{
-		id: 5,
 		image: "/images/amazon-clone.png",
 		title: "Amazon Clone",
 		technologies: [
@@ -64,8 +49,23 @@ export const tileData = [
 			"Redux",
 			"Next-Auth",
 		],
-		cols: 1,
+		cols: 2,
 		path: "https://amazon-clone-xi-sage.vercel.app/",
+	},
+	{
+		id: 5,
+		image: "/images/e-commerce.png",
+		title: "E-Commerce App",
+		technologies: [
+			"Next.js",
+			"Redux",
+			"MongoDB",
+			"Next-Auth",
+			"Material-UI",
+			"Styled-Components",
+		],
+		cols: 3,
+		path: "https://merlyn-app.vercel.app/",
 	},
 ];
 
