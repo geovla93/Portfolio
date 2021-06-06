@@ -24,6 +24,8 @@ class MyDocument extends Document {
 				</Head>
 				<body>
 					<div id="page-transition" />
+					<div id="overlay-root" />
+					<div id="modal-root" />
 					<Main />
 					<NextScript />
 				</body>

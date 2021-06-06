@@ -1,16 +1,13 @@
 import React, { useState } from "react";
-import { GridListTileBar, IconButton, Link } from "@material-ui/core";
-import InfoIcon from "@material-ui/icons/Info";
-import LinkIcon from "@material-ui/icons/Link";
+import {
+	InformationCircleIcon,
+	ExternalLinkIcon,
+} from "@heroicons/react/solid";
 
 import Modal from "../Modal/Modal";
 
-import { useStyles } from "./TileStyles";
-
 const Tile = ({ tile }) => {
 	const [open, setOpen] = useState(false);
-
-	const classes = useStyles();
 
 	const handleClickOpen = () => {
 		setOpen(true);
@@ -20,29 +17,41 @@ const Tile = ({ tile }) => {
 	};
 	return (
 		<>
-			<GridListTileBar
-				title={tile.title}
-				className={classes.tileBar}
-				actionIcon={
-					<>
-						<IconButton
-							aria-label={`Info about ${tile.title}`}
-							className={classes.icon}
+			<div
+				key={tile.id}
+				className={`min-h-96 relative flex ${
+					tile.cols === 2 && "md:col-span-2"
+				} ${tile.cols === 3 && "md:col-span-3"}`}
+			>
+				<img
+					className="object-cover object-left-top w-full"
+					loading="lazy"
+					src={tile.image}
+					alt={tile.title}
+				/>
+				<div className="absolute bottom-0 left-0 bg-black bg-opacity-70 h-16 2xl:h-24 w-full flex items-center justify-between px-3 2xl:px-6">
+					<h4 className="text-white text-lg 2xl:text-2xl flex-grow">
+						{tile.title}
+					</h4>
+					<div className="flex space-x-2">
+						<span
 							onClick={handleClickOpen}
+							className="p-2 hover:bg-gray-300 hover:bg-opacity-30 flex rounded-full cursor-pointer group"
 						>
-							<InfoIcon />
-						</IconButton>
-						<Link href={tile.path} target="_blank" rel="noopener noreferrer">
-							<IconButton
-								aria-label={`Link to ${tile.title}`}
-								className={classes.icon}
-							>
-								<LinkIcon />
-							</IconButton>
-						</Link>
-					</>
-				}
-			/>
+							<InformationCircleIcon className="h-6 w-6 2xl:h-8 2xl:w-8 text-white group-hover:text-secondary" />
+						</span>
+						<a
+							className="p-2 hover:bg-gray-300 hover:bg-opacity-30 flex rounded-full group"
+							href={tile.path}
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label={`Link to ${tile.title}`}
+						>
+							<ExternalLinkIcon className="h-6 w-6 2xl:h-8 2xl:w-8 text-white group-hover:text-secondary" />
+						</a>
+					</div>
+				</div>
+			</div>
 			<Modal open={open} tile={tile} onClose={handleClose} />
 		</>
 	);

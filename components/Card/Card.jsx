@@ -1,7 +1,3 @@
-import React from "react";
-import { Card, CardContent, Typography, List } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
-
 import ListItems from "../ListItems/ListItems";
 
 const skills = [
@@ -13,33 +9,20 @@ const skills = [
 	"Node.js",
 	"MongoDB",
 	"Firebase",
+	"Next.js",
+	"TailwindCSS",
 ];
 
-const useStyles = makeStyles({
-	list: {
-		display: "flex",
-		flexDirection: "row",
-		flexWrap: "wrap",
-		minHeight: "40vh",
-		"@media (max-width: 576px)": {
-			flexDirection: "column",
-		},
-	},
-});
-
 const SkillsCard = () => {
-	const classes = useStyles();
 	return (
-		<Card>
-			<CardContent>
-				<Typography component="h2" variant="h5" align="left" gutterBottom>
-					Some of the technologies I work with:
-				</Typography>
-				<List className={classes.list}>
-					<ListItems skills={skills} />
-				</List>
-			</CardContent>
-		</Card>
+		<div className="bg-white rounded-md p-4">
+			<h2 className="text-lg mb-4">Some of the technologies I work with:</h2>
+			<ul className="flex flex-col flex-wrap max-h-72">
+				{skills.map((skill) => {
+					return <ListItems key={skill} skill={skill} />;
+				})}
+			</ul>
+		</div>
 	);
 };
 

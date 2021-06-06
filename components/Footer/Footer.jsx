@@ -1,6 +1,3 @@
-import React from "react";
-import { Typography } from "@material-ui/core";
-import { FooterContainer, SocialIcon } from "./FooterStyles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faFacebookF,
@@ -40,22 +37,25 @@ const socialItems = [
 
 const Footer = () => {
 	return (
-		<FooterContainer>
+		<footer className="w-full h-24 flex flex-col md:flex-row items-center text-white text-center justify-center space-y-2 md:space-y-0 md:justify-evenly">
 			<div>
 				{socialItems.map(({ icon, link, color, label }) => {
 					return (
-						<SocialIcon key={link} href={link} color={color} aria-label={label}>
+						<a
+							className="hover:text-secondary mx-2"
+							key={link}
+							href={link}
+							aria-label={label}
+						>
 							<FontAwesomeIcon icon={icon} size="2x" />
-						</SocialIcon>
+						</a>
 					);
 				})}
 			</div>
-			<div>
-				<Typography variant="body1">
-					Copyright © {date} Designed by <strong>George Vlassis</strong>
-				</Typography>
-			</div>
-		</FooterContainer>
+			<p className="text-md md:text-lg">
+				Copyright © {date} Designed by <strong>George Vlassis</strong>
+			</p>
+		</footer>
 	);
 };
 

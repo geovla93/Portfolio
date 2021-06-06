@@ -12,6 +12,7 @@ export const tileData = [
 			"Next-Auth",
 		],
 		cols: 1,
+		github: "https://github.com/geovla93/amazon-clone",
 		path: "https://amazon-clone-xi-sage.vercel.app/",
 	},
 	{
@@ -27,6 +28,7 @@ export const tileData = [
 			"Styled-Components",
 		],
 		cols: 2,
+		github: "https://github.com/geovla93/merlyn-app",
 		path: "https://merlyn-app.vercel.app/",
 	},
 	{
@@ -35,6 +37,7 @@ export const tileData = [
 		title: "Meetings App",
 		technologies: ["ReactJS", "Node.js", "MongoDB", "Bootstrap"],
 		cols: 1,
+		github: "https://github.com/geovla93/meetingsapp",
 		path: "https://athletes-foot.herokuapp.com/",
 	},
 	{
@@ -50,6 +53,7 @@ export const tileData = [
 			"Next-Auth",
 		],
 		cols: 2,
+		github: "https://github.com/geovla93/amazon-clone",
 		path: "https://amazon-clone-xi-sage.vercel.app/",
 	},
 	{
@@ -65,6 +69,7 @@ export const tileData = [
 			"Styled-Components",
 		],
 		cols: 3,
+		github: "https://github.com/geovla93/merlyn-app",
 		path: "https://merlyn-app.vercel.app/",
 	},
 ];

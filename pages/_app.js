@@ -8,6 +8,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css"; // Import the CSS
 config.autoAddCss = false; // Tell Font Awesome to skip adding the CSS automatically since it's being imported above
 
 import Loading from "../components/Loading/Loading";
+import Layout from "../components/Layout/Layout";
 
 function MyApp({ Component, pageProps, router }) {
 	const [loading, setLoading] = useState(true);
@@ -34,7 +35,9 @@ function MyApp({ Component, pageProps, router }) {
 					{loading ? (
 						<Loading load={loading} />
 					) : (
-						<Component {...pageProps} key={router.route} />
+						<Layout {...pageProps}>
+							<Component {...pageProps} key={router.route} />
+						</Layout>
 					)}
 				</AnimatePresence>
 			</StylesProvider>
