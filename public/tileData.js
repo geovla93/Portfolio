@@ -28,8 +28,8 @@ export const tileData = [
 			"Styled-Components",
 		],
 		cols: 2,
-		github: "https://github.com/geovla93/merlyn-app",
-		path: "https://merlyn-app.vercel.app/",
+		github: "https://github.com/geovla93/merlyn-commerce",
+		path: "https://merlyn-commerce.vercel.app/",
 	},
 	{
 		id: 3,
@@ -69,8 +69,8 @@ export const tileData = [
 			"Styled-Components",
 		],
 		cols: 3,
-		github: "https://github.com/geovla93/merlyn-app",
-		path: "https://merlyn-app.vercel.app/",
+		github: "https://github.com/geovla93/merlyn-commerce",
+		path: "https://merlyn-commerce.vercel.app/",
 	},
 ];
 
