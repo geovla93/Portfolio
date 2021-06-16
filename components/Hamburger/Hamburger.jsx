@@ -38,9 +38,9 @@ const Hamburger = () => {
 				onClick={handleClick}
 			>
 				{toggleClick ? (
-					<XIcon className="h-10 w-10" />
+					<XIcon className="h-10 w-10 text-white" />
 				) : (
-					<MenuIcon className="h-10 w-10" />
+					<MenuIcon className="h-10 w-10 text-white" />
 				)}
 			</label>
 			<div

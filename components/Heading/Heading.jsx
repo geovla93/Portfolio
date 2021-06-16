@@ -1,14 +1,7 @@
-import React, { useState } from "react";
-import { makeStyles } from "@material-ui/styles";
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 import { headingVariants } from "../../utils/framer-motion/headingVariants";
-
-const useStyles = makeStyles({
-	hover: {
-		display: "inline-block",
-	},
-});
 
 const Heading = ({ children }) => {
 	const [isHovered, setIsHovered] = useState(false);
@@ -17,11 +10,9 @@ const Heading = ({ children }) => {
 		setIsHovered(!isHovered);
 	};
 
-	const classes = useStyles();
-
 	return (
 		<motion.span
-			className={classes.hover}
+			className="hover:inline-block"
 			onMouseEnter={toggleHover}
 			onMouseLeave={toggleHover}
 			variants={headingVariants}

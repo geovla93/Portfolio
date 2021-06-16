@@ -1,61 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import * as emailjs from "emailjs-com";
-import {
-	FormControl,
-	TextField,
-	Button,
-	CircularProgress,
-	Dialog,
-	DialogTitle,
-	DialogContent,
-	Typography,
-} from "@material-ui/core";
-import { makeStyles } from "@material-ui/styles";
 
-import { Form } from "./ContactFormStyles";
-
-const useStyles = makeStyles((theme) => ({
-	focus: {
-		"& label": {
-			color: "#fff",
-		},
-		"& label.Mui-focused": {
-			color: "#4da8da",
-		},
-		"& .MuiOutlinedInput-root": {
-			color: "#fff",
-			"& fieldset": {
-				borderColor: "#fff",
-			},
-			"&.Mui-focused fieldset": {
-				borderColor: "#4da8da",
-			},
-			"&:hover fieldset": {
-				borderColor: "#4da8da",
-			},
-		},
-	},
-	input: {
-		"@media (max-width: 960px)": {
-			marginBottom: "0.5rem",
-		},
-	},
-	button: {
-		width: "35%",
-		color: "#fff",
-		borderColor: "#fff",
-		position: "relative",
-		"&:hover": {
-			borderColor: "#4da8da",
-			color: "#4da8da",
-		},
-	},
-	loader: {
-		position: "absolute",
-		right: 12,
-		color: "#4da8da",
-	},
-}));
+import ContactModal from "../ContactModal/ContactModal";
 
 const ContactForm = () => {
 	const [textInput, setTextInput] = useState({
@@ -74,40 +20,6 @@ const ContactForm = () => {
 			clearTimeout(timer.current);
 		};
 	}, []);
-
-	const classes = useStyles();
-
-	const inputs = [
-		{
-			id: 1,
-			type: "text",
-			placeholder: "Name",
-			name: "name",
-			value: textInput.name,
-		},
-		{
-			id: 2,
-			type: "email",
-			placeholder: "Email",
-			name: "email",
-			value: textInput.email,
-		},
-		{
-			id: 3,
-			type: "text",
-			placeholder: "Subject",
-			name: "subject",
-			value: textInput.subject,
-		},
-		{
-			id: 4,
-			as: "textarea",
-			placeholder: "Enter your message here...",
-			name: "message",
-			value: textInput.message,
-			rows: 3,
-		},
-	];
 
 	const handleChange = (event) => {
 		const { name, value } = event.target;
@@ -167,69 +79,82 @@ const ContactForm = () => {
 	};
 
 	return (
-		<Form onSubmit={handleSubmit}>
-			{inputs.map(({ type, as, placeholder, name, value, rows, id }) => {
-				return as ? (
-					<FormControl key={id} className={classes.input}>
-						<TextField
-							className={classes.focus}
-							type={type}
-							label={placeholder}
-							name={name}
-							value={value}
-							rows={rows}
-							onChange={handleChange}
-							multiline
-							required
-							variant="outlined"
-						/>
-					</FormControl>
-				) : (
-					<FormControl key={id} className={classes.input}>
-						<TextField
-							className={classes.focus}
-							type={type}
-							label={placeholder}
-							name={name}
-							value={value}
-							rows={rows}
-							onChange={handleChange}
-							required
-							variant="outlined"
-						/>
-					</FormControl>
-				);
-			})}
-			<Button
-				className={classes.button}
-				type="submit"
-				variant="outlined"
-				size="large"
-			>
-				Send
-				{loading && <CircularProgress size={24} className={classes.loader} />}
-			</Button>
-			<Dialog
-				open={open}
-				onClose={handleClose}
-				aria-labelledby="dialog-title"
-				aria-describedby="dialog-description"
-			>
-				<DialogTitle id="dialog-title">
-					<div>
-						<Typography variant="h6" gutterBottom>
-							Thanks for submitting!
-						</Typography>
-					</div>
-				</DialogTitle>
-				<DialogContent id="dialog-description">
-					<Typography variant="body1">
-						Your message has been received! I will reply to you as soon as
-						possible.
-					</Typography>
-				</DialogContent>
-			</Dialog>
-		</Form>
+		<>
+			<form className="flex-1 flex flex-col space-y-4" onSubmit={handleSubmit}>
+				<input
+					className="outline-none bg-transparent text-gray-200 rounded-sm border-white border hover:border-secondary transition duration-300 p-3"
+					type="text"
+					placeholder="Name"
+					value={textInput.name}
+					name="name"
+					onChange={handleChange}
+					required
+				/>
+				<input
+					className="outline-none bg-transparent text-gray-200 rounded-sm border-white border hover:border-secondary transition duration-300 p-3"
+					type="email"
+					placeholder="Email"
+					value={textInput.email}
+					name="email"
+					onChange={handleChange}
+					required
+				/>
+				<input
+					className="outline-none bg-transparent text-gray-200 rounded-sm border-white border hover:border-secondary transition duration-300 p-3"
+					type="text"
+					placeholder="Subject"
+					value={textInput.subject}
+					name="subject"
+					onChange={handleChange}
+					required
+				/>
+				<textarea
+					className="outline-none bg-transparent text-gray-200 rounded-sm border-white border hover:border-secondary transition duration-300 p-3"
+					placeholder="Enter your message here..."
+					value={textInput.message}
+					name="message"
+					rows="3"
+					onChange={handleChange}
+					required
+				/>
+				<button
+					type="submit"
+					className="relative border border-white rounded-sm block w-1/3 text-white p-3 outline-none hover:border-secondary hover:text-secondary transition duration-300"
+				>
+					Send
+					{loading && (
+						<svg
+							className="w-6 h-6 absolute right-5 top-3"
+							xmlns="http://www.w3.org/2000/svg"
+							version="1.0"
+							viewBox="0 0 128 128"
+						>
+							<script type="text/ecmascript" />
+							<g>
+								<linearGradient id="linear-gradient">
+									<stop offset="0%" stop-color="rgba(77,168,218,0.2)" />
+									<stop offset="100%" stop-color="#4da8da" />
+								</linearGradient>
+								<path
+									d="M63.85 0A63.85 63.85 0 1 1 0 63.85 63.85 63.85 0 0 1 63.85 0zm.65 19.5a44 44 0 1 1-44 44 44 44 0 0 1 44-44z"
+									fill="url(#linear-gradient)"
+									fill-rule="evenodd"
+								/>
+								<animateTransform
+									attributeName="transform"
+									type="rotate"
+									from="0 64 64"
+									to="360 64 64"
+									dur="1080ms"
+									repeatCount="indefinite"
+								></animateTransform>
+							</g>
+						</svg>
+					)}
+				</button>
+			</form>
+			<ContactModal open={open} onClose={handleClose} />
+		</>
 	);
 };
 

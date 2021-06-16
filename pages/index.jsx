@@ -4,6 +4,7 @@ import ReactTypingEffect from "react-typing-effect";
 
 import CustomButton from "../components/CustomButton/CustomButton";
 import Heading from "../components/Heading/Heading";
+
 import { buttonVariants } from "../utils/framer-motion/buttonVariants";
 
 const heading1 = "Hello!";
@@ -17,7 +18,7 @@ export default function Home() {
 			</Head>
 
 			<div className="flex flex-col items-center py-16 px-4 space-y-12 md:space-y-20 text-center">
-				<h1 className="text-white text-7xl font-bold tracking-wider">
+				<h1 className="text-white text-7xl font-bold tracking-wider cursor-default">
 					{[...heading1].map((letter, index) => {
 						return <Heading key={index}>{letter}</Heading>;
 					})}
@@ -32,7 +33,7 @@ export default function Home() {
 						eraseDelay="500000"
 					/>
 				</div>
-				<div className="flex flex-col md:flex-row space-y-6 md:space-x-10 md:space-y-0 items-center">
+				<div className="flex flex-col md:flex-row space-y-6 md:space-x-20 md:space-y-0 items-center">
 					<Link href="/projects">
 						<a>
 							<CustomButton

@@ -14,7 +14,7 @@ export default function About() {
 			</Head>
 
 			<div className="flex flex-col items-center py-16 px-4 md:px-12 space-y-12 md:space-y-20">
-				<h1 className="text-white text-7xl font-bold tracking-wider -mb-4 self-start">
+				<h1 className="text-white text-7xl font-bold tracking-wider -mb-4 self-start cursor-default">
 					{[...title].map((letter, index) => {
 						return <Heading key={index}>{letter}</Heading>;
 					})}
